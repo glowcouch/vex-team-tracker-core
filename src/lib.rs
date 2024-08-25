@@ -1,14 +1,58 @@
-pub fn add(left: u64, right: u64) -> u64 {
-    left + right
+use serde::{Deserialize, Serialize};
+
+#[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct Team {
+    pub data: TeamData,
+    pub notes: TeamNotes,
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+#[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct TeamData {
+    pub id: u16,
+    pub number: String,
+    pub organization: String,
+}
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+#[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct TeamNotes {
+    pub robots: Vec<String>,
+    pub members: Vec<TeamMember>,
+    pub driving: String,
+    pub strategy: String,
+    pub notes: String,
+    pub lock: Lock,
+}
+
+#[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct TeamMember {
+    pub name: String,
+    pub role: String,
+}
+
+#[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct Robot {
+    pub status: RobotStatus,
+    pub features: String,
+    pub autons: Vec<RobotAuton>,
+    pub lock: Lock,
+}
+
+#[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub enum RobotStatus {
+    #[default]
+    Active,
+    Inactive,
+}
+
+#[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct RobotAuton {
+    pub points: i32,
+    pub description: String,
+}
+
+#[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub enum Lock {
+    Locked(String),
+    #[default]
+    Unlocked,
 }
