@@ -8,7 +8,7 @@ pub struct Team {
 
 #[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct TeamData {
-    pub id: u16,
+    pub id: u32,
     pub number: String,
     pub organization: String,
 }
