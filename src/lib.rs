@@ -34,7 +34,6 @@ pub struct Robot {
     pub status: RobotStatus,
     pub features: String,
     pub autons: Vec<RobotAuton>,
-    pub lock: Lock,
 }
 
 #[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize)]
