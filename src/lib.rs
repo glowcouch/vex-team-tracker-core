@@ -15,6 +15,7 @@ pub struct TeamData {
 
 #[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct TeamNotes {
+    pub images: Vec<String>,
     pub robots: Vec<Robot>,
     pub members: Vec<TeamMember>,
     pub driving: String,
@@ -25,12 +26,14 @@ pub struct TeamNotes {
 
 #[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct TeamMember {
+    pub image: String,
     pub name: String,
     pub role: String,
 }
 
 #[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Robot {
+    pub images: String,
     pub status: RobotStatus,
     pub features: String,
     pub autons: Vec<RobotAuton>,
