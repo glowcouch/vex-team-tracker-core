@@ -31,7 +31,7 @@ pub struct TeamMember {
 
 #[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct Robot {
-    pub images: String,
+    pub images: Vec<String>,
     pub status: RobotStatus,
     pub features: String,
     pub autons: Vec<RobotAuton>,
