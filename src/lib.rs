@@ -57,3 +57,16 @@ pub enum Lock {
     #[default]
     Unlocked,
 }
+
+#[derive(Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub enum SocialPlatform {
+    Instagram,
+    Youtube,
+}
+
+#[derive(Clone, PartialEq, Eq, Serialize, Deserialize)]
+pub struct SocialAcc {
+    platform: SocialPlatform,
+    url: String,
+    name: String,
+}
