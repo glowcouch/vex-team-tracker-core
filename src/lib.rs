@@ -66,7 +66,7 @@ pub enum SocialPlatform {
 
 #[derive(Clone, PartialEq, Eq, Serialize, Deserialize)]
 pub struct SocialAcc {
-    platform: SocialPlatform,
-    url: String,
-    name: String,
+    pub platform: SocialPlatform,
+    pub url: String,
+    pub name: String,
 }
