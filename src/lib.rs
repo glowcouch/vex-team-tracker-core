@@ -69,4 +69,5 @@ pub struct SocialAcc {
     pub platform: SocialPlatform,
     pub url: String,
     pub name: String,
+    pub profile_pic_url: Option<String>,
 }
