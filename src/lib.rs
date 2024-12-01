@@ -8,10 +8,10 @@ pub struct Team {
 
 #[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize, Hash)]
 pub struct Location {
-    city: String,
-    region: Option<String>,
-    postcode: u32,
-    country: String,
+    pub city: String,
+    pub region: Option<String>,
+    pub postcode: Option<u32>,
+    pub country: String,
 }
 
 #[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize, Hash)]
