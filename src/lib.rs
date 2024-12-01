@@ -1,20 +1,27 @@
 use serde::{Deserialize, Serialize};
 
-#[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize, Hash)]
+#[derive(Default, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Team {
     pub data: TeamData,
     pub notes: TeamNotes,
 }
 
-#[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize, Hash)]
+#[derive(Default, Clone, PartialEq, Serialize, Deserialize)]
+pub struct Coordinates {
+    latitude: f64,
+    longitude: f64,
+}
+
+#[derive(Default, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Location {
     pub city: String,
     pub region: Option<String>,
     pub postcode: Option<String>,
     pub country: String,
+    pub coords: Coordinates,
 }
 
-#[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize, Hash)]
+#[derive(Default, Clone, PartialEq, Serialize, Deserialize)]
 pub struct TeamData {
     pub id: u32,
     pub number: String,
