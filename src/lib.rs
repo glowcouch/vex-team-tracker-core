@@ -10,7 +10,7 @@ pub struct Team {
 pub struct Location {
     pub city: String,
     pub region: Option<String>,
-    pub postcode: Option<u32>,
+    pub postcode: Option<String>,
     pub country: String,
 }
 
