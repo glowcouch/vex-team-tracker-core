@@ -7,11 +7,20 @@ pub struct Team {
 }
 
 #[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize, Hash)]
+pub struct Location {
+    city: String,
+    region: Option<String>,
+    postcode: u32,
+    country: String,
+}
+
+#[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize, Hash)]
 pub struct TeamData {
     pub id: u32,
     pub number: String,
     pub name: String,
     pub organization: String,
+    pub location: Location,
 }
 
 #[derive(Default, Clone, PartialEq, Eq, Serialize, Deserialize, Hash)]
