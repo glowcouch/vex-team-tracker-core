@@ -8,8 +8,8 @@ pub struct Team {
 
 #[derive(Default, Clone, PartialEq, Serialize, Deserialize)]
 pub struct Coordinates {
-    latitude: f64,
-    longitude: f64,
+    pub latitude: f64,
+    pub longitude: f64,
 }
 
 #[derive(Default, Clone, PartialEq, Serialize, Deserialize)]
