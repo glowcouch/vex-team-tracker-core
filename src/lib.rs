@@ -74,6 +74,12 @@ pub enum Lock {
     Unlocked,
 }
 
+#[derive(Clone, PartialEq, Serialize, Deserialize)]
+pub struct Statistics {
+    pub average_score: f32,
+    pub average_net_score: f32,
+}
+
 #[derive(Clone, PartialEq, Eq, Serialize, Deserialize, Hash)]
 pub enum SocialPlatform {
     Instagram,
