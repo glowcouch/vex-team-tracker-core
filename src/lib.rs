@@ -30,7 +30,7 @@ pub struct TeamData {
     pub location: Location,
 }
 
-#[derive(Default, Clone, PartialEq, Serialize, Deserialize, Debug, Hash)]
+#[derive(Default, Clone, Eq, PartialEq, Serialize, Deserialize, Debug, Hash)]
 pub struct TeamNotes {
     pub robots: Vec<Robot>,
     pub members: Vec<TeamMember>,
@@ -40,13 +40,13 @@ pub struct TeamNotes {
     pub lock: Lock,
 }
 
-#[derive(Default, Clone, PartialEq, Serialize, Deserialize, Debug, Hash)]
+#[derive(Default, Clone, Eq, PartialEq, Serialize, Deserialize, Debug, Hash)]
 pub struct TeamMember {
     pub name: String,
     pub role: String,
 }
 
-#[derive(Default, Clone, PartialEq, Serialize, Deserialize, Debug, Hash)]
+#[derive(Default, Clone, Eq, PartialEq, Serialize, Deserialize, Debug, Hash)]
 pub struct Robot {
     pub images: Vec<String>,
     pub status: RobotStatus,
@@ -54,20 +54,20 @@ pub struct Robot {
     pub autons: Vec<RobotAuton>,
 }
 
-#[derive(Default, Clone, PartialEq, Serialize, Deserialize, Debug, Hash)]
+#[derive(Default, Clone, Eq, PartialEq, Serialize, Deserialize, Debug, Hash)]
 pub enum RobotStatus {
     #[default]
     Active,
     Inactive,
 }
 
-#[derive(Default, Clone, PartialEq, Serialize, Deserialize, Debug, Hash)]
+#[derive(Default, Clone, Eq, PartialEq, Serialize, Deserialize, Debug, Hash)]
 pub struct RobotAuton {
     pub points: i32,
     pub description: String,
 }
 
-#[derive(Default, Clone, PartialEq, Serialize, Deserialize, Debug, Hash)]
+#[derive(Default, Clone, Eq, PartialEq, Serialize, Deserialize, Debug, Hash)]
 pub enum Lock {
     Locked(String),
     #[default]
@@ -80,13 +80,13 @@ pub struct Statistics {
     pub average_net_score: f32,
 }
 
-#[derive(Clone, PartialEq, Serialize, Deserialize, Debug, Hash)]
+#[derive(Clone, Eq, PartialEq, Serialize, Deserialize, Debug, Hash)]
 pub enum SocialPlatform {
     Instagram,
     Youtube,
 }
 
-#[derive(Clone, PartialEq, Serialize, Deserialize, Debug, Hash)]
+#[derive(Clone, Eq, PartialEq, Serialize, Deserialize, Debug, Hash)]
 pub struct SocialAcc {
     pub platform: SocialPlatform,
     pub url: String,
