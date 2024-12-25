@@ -26,7 +26,7 @@ pub struct TeamData {
     pub id: u32,
     pub number: String,
     pub name: String,
-    pub organization: String,
+    pub organization: Option<String>,
     pub location: Location,
 }
 
