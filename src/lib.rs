@@ -104,7 +104,7 @@ pub struct TeamNotes {
     pub driving: String,
     pub strategy: String,
     pub notes: String,
-    pub lock: Lock,
+    pub lock: Option<String>,
 }
 
 #[cfg(feature = "fake")]
@@ -242,24 +242,17 @@ impl fake::Dummy<FakeRobotAuton> for RobotAuton {
     }
 }
 
-#[derive(Default, Clone, Eq, PartialEq, Serialize, Deserialize, Debug, Hash)]
-pub enum Lock {
-    Locked(String),
-    #[default]
-    Unlocked,
-}
-
 #[cfg(feature = "fake")]
 pub struct FakeLock;
 
 #[cfg(feature = "fake")]
-impl fake::Dummy<FakeLock> for Lock {
+impl fake::Dummy<FakeLock> for Option<String> {
     fn dummy_with_rng<R: rand::Rng + ?Sized>(_: &FakeLock, rng: &mut R) -> Self {
         match rng.gen_bool(0.8) {
-            true => Lock::Unlocked,
-            false => Lock::Locked({
-                let u: u64 = rng.gen();
-                u.to_string()
+            true => None,
+            false => Some({
+                let o: u64 = rng.gen();
+                o.to_string()
             }),
         }
     }
